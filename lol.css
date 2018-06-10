@@ -1,47 +1,199 @@
-.navbar{
-    font-family: fantasy;
-    font-stretch: ultra-expanded;
-    opacity: 1;
-    resize: vertical;
+/* Basic Full Customizable Cytube CSS - All of the colors are rgb and rgba code, but you can easily use hex, also you may notice various !important's next to some lines, some are REALLY necessary, or the code may not work, some were added just because */
+ 
+ 
+/* General Configurations, basically whatever that isn't specifically modified will get this properties  */
+html, body
+{
+    background: rgb(0,0,0)
+/* background color, cytube default is white, with this code it becomes black, but you can change to whatever you want */
+        url("#")
+/* You can link wallpaper for your channel too, for google drive ones use a link this (https://googledrive.com/host/x/) x being that code after /d/ and before /edit, for imgur look for links like i.imgur.com/x.png */;
+    background-size:50%
+/* This will make sure your wallpaper fills the screen, at least the width*/;
+    background-repeat:repeat
+/* Use this so your wallpaper don't repeat, if you actually want that to happen change it to 'x y', it will fill everything */;
+    color: rgb(200,200,200)
+/* This changes the font color */;
 }
-#mainpage{
-  background:#ff44bc
+ 
+ 
+/* Links - 'a' alone changes the regular link look, a:hover changes how it looks when you hover a link, a:focus changes how it will look after you have pressed it, and a:active will change how it looks after you release before you click something else */
+a, a:hover, a:focus, a:active
+{
+    color: rgb(500, 500, 500);
 }
-#wrap { 
-  height: 100%;
-  width: 100%;
-  left:0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  position: absolute;
+ 
+/* Playlist -  This makes the all the playlist items look different */
+.queue_entry
+{
+    background-color: rgba(0,0, 0, 0)
+    /* With rgba you can use transparency, you just need to put a value between 0 and 1, 0 being completely transparent and 1 being a solid color */;
+    border-color: rgb(500,500,500)
+    /* Color between list items, derp */;
 }
-#wrap, .navbar{
-background: linear-gradient(0deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
-background-size: 1800% 1800%;
+ 
+ 
+/* Properties of the active item on the playlist */
+.queue_active
+{
+    background-color: rgba(0, 0, 0, 0));
+    border:none
+    /* None leaves the item with no border at all, depending on the color scheme this may make the item blend too much*/;
+}
+ 
+/*  Properties of the header of chat, the video title, the playlist footer, all of the divs with .active class, and the open poll menu, you may want to use different colors with some of this items, like chat header being red and video title being blue, in this case you need to remove the wanted div and write it's code aside */
+#chatheader, #currenttitle, #plmeta, .active, .poll-menu
+{
+    background-color:#2c3e50;
+    color: #ecf0f1;0
+    border:none;
+}
+ 
+/* Divs with the .muted class i.e: closed poll*/
+.muted
+{
+    background-color:rgba(0,0,0,0)!important;
+    color: #2ecc71;
+    border:none;
+}
+ 
+ 
+/* MOTD properties */
+#motd
+{
+    font-weight: bold;
+    text-align: center;
+    border:none;
+}
+ 
+/* Motd wrap, preferably leave it like this, invisible*/
+#motdwrap
+{
+    background-color:rgba(255,255,255,0);
+    border:none;
+}
+ 
+ 
+/* Footer Configurations */
+#footer
+{
+    background:rgb(0,0,0)!important;
+    color:rgb(0,0,0)!important;
+    text-align:center;
+    width:100%;
+}
+ 
+ 
+/* Userlist configurationss */
+#userlist
+{
+    background: rgba(0,0,0 );
+    color: #afb0c9;
+    font-weight:bold;
+}
+ 
+/* Chat configurations */
+#messagebuffer
+{
+    background-image:linear-gradient(to bottom,
+        rgba(30, 30, 30, 100),
+        rgba(0, 0, 0, .0));
+    color:rgb(255, 255, 255);
+}
+ 
+/* Registered Users Nick Color */
+.username { font-size:0px; }
+.username:before {
+    content:'Anon: ';
+    font-weight: 900;
+    font-size: 14px;
+    color:  #F9F9F9 }
+}
+ 
+/* Rank 3 and above Users Nick Color */
+.userlist_owner
+{
+    color: #f39c12!important;
+}
+ 
+.userlist_Chiggen
+{
+    color:rgb(0, 0, 0)!important;
+}
+ 
+/* Rank 2(mod) Users Nick Color */
+.userlist_op {
+    color: #e22b2b!important;
+}
+ 
+ 
+/* Guests Users Nick Color */
+.userlist_guest
+{
+    color: #c9c9c9!important;
+}
+ 
+/* Navigation bar and normal state buttons configurations*/
+nav, .navbar, button
+{
+    background-color: rgba(24, 24, 24, 0.3)!important;
+    background-image: linear-gradient(to bottom,
+        rgba(24, 24, 24, 0.3),
+        rgba(24, 24, 24, 0.3))!important;
+    background-repeat: repeat-x;
+    border: none!important;
+    color:rgb(200,200,200)!important;
+}
+ 
+/* Pressed Button Configurations */
+button:active, button:focus
+{
+    background-color: rgba(128,128,128,0.1)!important;
+    background-image: linear-gradient(to bottom,
+        rgba(105, 105, 105, 100),
+        rgba(105, 105, 105, 20))!important;
+        background-repeat: repeat-x;
+        border: none!important;
+}
+ 
+/* Hovering Buttons configurations */
+button:hover
+{
+    background-color: rgba(91,125,140,0.3)!important;
+    background-image: linear-gradient(to bottom,
+        rgba(255, 255, 255, 1),
+        rgba(255, 255, 255, 1))!important;
+        background-repeat: repeat-x;
+        border: none!important;
+        color:rgb(280, 50, 250)!important;
+}
+ 
+/* Chat box configs abajo */
+#chatline{
+    background: #807f8c8d!important;
+    color:rgb(255,255,255)!important;
+}
 
--webkit-animation: rainbow 100ms ease infinite;
--z-animation: rainbow 100ms ease infinite;
--o-animation: rainbow 100ms ease infinite;
-  animation: rainbow 100ms ease infinite;}
+.emote-preview-container {
+    width: 70px;
+    height: 70px;
+}
+ 
+.emote-preview {
+    overflow: hidden;
+    max-width: 70px;
+    max-height: 70px;
+}
+ 
+.channel-emote
+{
+  max-width: 25%;
+  
+}
+ 
 
-@-webkit-keyframes rainbow {
-    0%{background-position:0% 82%}
-    50%{background-position:100% 19%}
-    100%{background-position:0% 82%}
-}
-@-moz-keyframes rainbow {
-    0%{background-position:0% 82%}
-    50%{background-position:100% 19%}
-    100%{background-position:0% 82%}
-}
-@-o-keyframes rainbow {
-    0%{background-position:0% 82%}
-    50%{background-position:100% 19%}
-    100%{background-position:0% 82%}
-}
-@keyframes rainbow { 
-    0%{background-position:0% 82%}
-    50%{background-position:100% 19%}
-    100%{background-position:0% 82%}
-}
+
+
+
+
+div.chat-msg-xxxx .username {}
