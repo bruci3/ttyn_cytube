@@ -1,44 +1,45 @@
-/* Basic Full Customizable Cytube CSS - All of the colors are rgb and rgba code, but you can easily use hex, also you may notice various !important's next to some lines, some are REALLY necessary, or the code may not work, some were added just because */
- 
- 
-/* General Configurations, basically whatever that isn't specifically modified will get this properties  */
+body {
+  background: linear-gradient(45deg, #00ff1f, #ff0000, #9800ff, #003dff, #02b9ff, #4bd58d);
+  background-size: 1200% 1200%;
+  -webkit-animation: rainbow 500ms ease infinite;
+  animation: rainbow 500ms ease infinite;
+}
+@-webkit-keyframes rainbow {
+  0% { background-position: 0% 50% }
+  50% { background-position: 100% 50% }
+  100% { background-position: 0% 50% }
+}
+@keyframes rainbow {
+  0% { background-position: 0% 50% }
+  50% { background-position: 100% 50% }
+  100% { background-position: 0% 50% }
+}
+
+
 html, body
 {
-    background: rgb(0,0,0)
-/* background color, cytube default is white, with this code it becomes black, but you can change to whatever you want */
-        url("#")
-/* You can link wallpaper for your channel too, for google drive ones use a link this (https://googledrive.com/host/x/) x being that code after /d/ and before /edit, for imgur look for links like i.imgur.com/x.png */;
+/*     background: rgb(0,0,0) url("#");
     background-size:50%
-/* This will make sure your wallpaper fills the screen, at least the width*/;
-    background-repeat:repeat
-/* Use this so your wallpaper don't repeat, if you actually want that to happen change it to 'x y', it will fill everything */;
+    background-repeat:repeat */
     color: rgb(200,200,200)
-/* This changes the font color */;
 }
  
- 
-/* Links - 'a' alone changes the regular link look, a:hover changes how it looks when you hover a link, a:focus changes how it will look after you have pressed it, and a:active will change how it looks after you release before you click something else */
 a, a:hover, a:focus, a:active
 {
     color: rgb(500, 500, 500);
 }
  
-/* Playlist -  This makes the all the playlist items look different */
 .queue_entry
 {
     background-color: rgba(0,0, 0, 0)
-    /* With rgba you can use transparency, you just need to put a value between 0 and 1, 0 being completely transparent and 1 being a solid color */;
     border-color: rgb(500,500,500)
-    /* Color between list items, derp */;
 }
  
  
-/* Properties of the active item on the playlist */
 .queue_active
 {
     background-color: rgba(0, 0, 0, 0));
     border:none
-    /* None leaves the item with no border at all, depending on the color scheme this may make the item blend too much*/;
 }
  
 /*  Properties of the header of chat, the video title, the playlist footer, all of the divs with .active class, and the open poll menu, you may want to use different colors with some of this items, like chat header being red and video title being blue, in this case you need to remove the wanted div and write it's code aside */
@@ -188,12 +189,6 @@ button:hover
 .channel-emote
 {
   max-width: 25%;
-  
 }
- 
-
-
-
-
 
 div.chat-msg-xxxx .username {}
