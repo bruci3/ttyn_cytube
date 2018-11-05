@@ -5926,7 +5926,24 @@ function prepareMessage(msg) {
 				} else socket.emit("chatMsg", {msg:res});
 			});
 			COMMAND = false;
-		} else if (msg.indexOf('!emote') == 0) {
+		} 
+		else if (msg.indexOf('!gif2 ') == 0) {
+			var q = msg.split('!gif2 ')[1];
+			var url = 'https://api.tenor.com/v1/search?key=9D97N0Y40L7E&q=' + encodeURIComponent(q);
+			$.getJSON(url, function(data) {
+				console.log(data.results.media);
+				if (data.results.length > 0) { 
+					var nr = Math.floor(Math.random() * data.results.length);
+					var res = data.results[nr].media[0].gif.url;
+					console.log(res);
+				} else var res = '↳ No gifs found for "' + q + '"';
+				if (CHANNEL.opts.chat_antiflood && CHANNEL.opts.chat_antiflood_params.burst < 2) {
+					setTimeout(function() {socket.emit("chatMsg", {msg:res})}, 1000);
+				} else socket.emit("chatMsg", {msg:res});
+			});
+			COMMAND = false;
+		} 
+		else if (msg.indexOf('!emote') == 0) {
 			var len = CHANNEL.emotes.length;
 			if (len < 1) {
 				COMMAND = false;
