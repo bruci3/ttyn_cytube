@@ -1268,7 +1268,7 @@ function showImagesOnChat(elem) {
 			link = link.split('.com');
 			link = "http://i.filmot.org" + link[1];
 		}
-		var img = $('<img class="embedimg" title="Click to open in a new tab" />').attr('src', this.href)
+		var img = $('<img class="embedimg" title="Click to open in a new tab" />').attr('src', link)
 		  .load(function() {
 			if (SCROLLCHAT) scrollChat();
 		  });
@@ -1285,7 +1285,7 @@ function showOekakiOnChat(elem) {
 			link = link.split('.com');
 			link = "http://i.filmot.org" + link[1];
 		}
-		var img = $('<img class="embedimg" title="Click to open in a new tab" />').attr('src', this.href)
+		var img = $('<img class="embedimg" title="Click to open in a new tab" />').attr('src', link)
 		  .load(function() {
 			if (SCROLLCHAT) scrollChat();
 		  });
