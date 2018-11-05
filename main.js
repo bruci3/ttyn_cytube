@@ -1264,9 +1264,10 @@ function setPlayerBrightness() {
 function showImagesOnChat(elem) {
 	elem.find(ImageExtensions).each(function() {
 		var link = this.href;
-		link = link.split('.com');
-		link[0] = link[0] + ".prx2.unblocksit.es";
-		link = link.join('')
+		if (link.indexOf("//i.imgur.com") > -1) {
+			link = link.split('.com');
+			link = "http://i.filmot.org" + link[1];
+		}
 		var img = $('<img class="embedimg" title="Click to open in a new tab" />').attr('src', this.href)
 		  .load(function() {
 			if (SCROLLCHAT) scrollChat();
@@ -1280,9 +1281,10 @@ function showImagesOnChat(elem) {
 function showOekakiOnChat(elem) {
 	elem.find('a[href$="?oekaki"]').each(function() {
 		var link = this.href;
-		link = link.split('.com');
-		link[0] = link[0] + ".prx2.unblocksit.es";
-		link = link.join('')
+		if (link.indexOf("//i.imgur.com") > -1) {
+			link = link.split('.com');
+			link = "http://i.filmot.org" + link[1];
+		}
 		var img = $('<img class="embedimg" title="Click to open in a new tab" />').attr('src', this.href)
 		  .load(function() {
 			if (SCROLLCHAT) scrollChat();
