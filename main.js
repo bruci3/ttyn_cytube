@@ -1265,21 +1265,21 @@ function showImagesOnChat(elem) {
 	elem.find(ImageExtensions).each(function() {
 		var link = this.href;
 		var block = false;
-		if (link.indexOf("//i.imgur.com") > -1) {
-			if (window.location.href.indexOf("//cytu.be/") > -1) {
-				this.href = DROPBOX + 'bfp7d9u3ep06qad/blocked.png';
-				block = true;
-			}
-		}
+		// if (link.indexOf("//i.imgur.com") > -1) {
+		// 	if (window.location.href.indexOf("//cytu.be/") > -1) {
+		// 		this.href = DROPBOX + 'bfp7d9u3ep06qad/blocked.png';
+		// 		block = true;
+		// 	}
+		// }
 		var img = $('<img class="embedimg" title="Click to open in a new tab" />').attr('src', this.href)
 		  .load(function() {
 			if (SCROLLCHAT) scrollChat();
 		  });
   		$(this).html(img).attr('href', link);
-		if (block) {
-			$(this).html($(this).html() + ' [[blocked by imgur, click to see]]');
-			img.addClass('imgurblock');
-		}
+		// if (block) {
+		// 	$(this).html($(this).html() + ' [[blocked by imgur, click to see]]');
+		// 	img.addClass('imgurblock');
+		// }
 	});
 }
 
@@ -6951,7 +6951,7 @@ var _name = (ChannelName == "") ? '/' + CHANNELPATH + '/' + window.location.href
 css += '.navbar-brand:before {content:"' + _name + '" !important; font-size:14pt !important}\n';
 
 $("head").append('<style id="hardcss" type="text/css">' + css + '</style>');
-
+css += '.navbar-brand {font-size:0pt !important;}'
 // Set optional User CSS
 
 if (EXECCSS && USERCSS != "") {
@@ -7235,3 +7235,5 @@ if (ExternalScriptURL != "") $.getScript(ExternalScriptURL);
 /* End of Synchtube Premium API */
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+$("#mainpage").css('padding-top', ($nav.outerHeight() + 8) + 'px');
